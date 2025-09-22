@@ -5819,10 +5819,10 @@ void writevanitykey(bool compressed,Int *key)	{
 #endif
 	keys = fopen("VANITYKEYFOUND.txt","a+");
 	if(keys != NULL)	{
-		fprintf(keys,"Vanity Private Key: %s\npubkey: %s\nAddress %s\nrmd160 %s\n",hextemp,public_key_hex,address,hexrmd);
+		fprintf(keys,"HEX: %s\npubkey: %s\nAddress %s\nrmd160 %s\n",hextemp,public_key_hex,address,hexrmd);
 		fclose(keys);
 	}
-	printf("\nVanity Private Key: %s\npubkey: %s\nAddress %s\nrmd160 %s\n",hextemp,public_key_hex,address,hexrmd);
+	printf("\nHEX: %s\npubkey: %s\nAddress %s\nrmd160 %s\n",hextemp,public_key_hex,address,hexrmd);
 	
 #if defined(_WIN64) && !defined(__CYGWIN__)
 	ReleaseMutex(write_keys);
@@ -6687,3 +6687,4 @@ void calcualteindex(int i,Int *key)	{
 		key->Add(&BSGS_M3);
 	}
 }
+
